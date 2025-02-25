@@ -21,7 +21,6 @@ export default function DefaultFooter() {
   const isUserSetting = path?.includes('/setting')
   const isNotice = path?.includes('/notices')
   const isPlace = path?.includes('/places')
-  const isReview = path?.includes('/reviews')
 
   const handleClickMyPage = async () => {
     try {
@@ -39,7 +38,7 @@ export default function DefaultFooter() {
   if (isLogin || isComment || isUserSetting || isNotice) return null
 
   return (
-    (!isPlace || isReview) && (
+    !isPlace && (
       <footer className='fixed bottom-0 z-1000 shadow-custom max-w-[375px] text-black text-base bg-white flex w-full h-[60px] justify-around items-center'>
         <Link href='/' className='flex flex-col items-center'>
           <Home
